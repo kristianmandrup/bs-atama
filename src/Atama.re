@@ -4,10 +4,12 @@ module History = {
   type t;
 };
 module Connection = {
-  type t;
+  type t('a);
 };
-[@bs.send] external listen: (~cb: callback, unit) => unit = "";
-[@bs.send] external connect: any => Connection.t = "";
-[@bs.send] external merge: (~state: any, ~added: any => any, unit) => any = "";
-[@bs.send] external freeze: (~state: any, ~cb: callback, unit) => any = "";
-[@bs.send] external history: unit => History.t = "";
+[@bs.module "atama"] external listen: (~cb: callback, unit) => unit = "";
+[@bs.module "atama"] external connect: 'a => Connection.t('a) = "";
+[@bs.module "atama"]
+external merge: (~state: 'a, ~added: 'b => 'c, unit) => 'a = "";
+[@bs.module "atama"]
+external freeze: (~state: 'a, ~cb: callback, unit) => 'a = "";
+[@bs.module "atama"] external history: unit => History.t = "";
