@@ -7,6 +7,14 @@
     "build": "bsb -make-world",
     "watch": "bsb -make-world -w"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/kristianmandrup/bs-atama.git"
+  },
+  "homepage": "https://gitlab.com/kristianmandrup/bs-atama",
+  "bugs": {
+    "url": "https://gitlab.com/kristianmandrup/bs-atama/issues"
+  },
   "keywords": [
     "BuckleScript",
     "atama",
@@ -20,9 +28,14 @@
   "author": "Kristian Mandrup <kmandrup@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^4.0.18"
+    "@glennsl/bs-jest": "^0.4.6",
+    "bs-platform": "^4.0.18",
+    "jest": "^23.6.0"
   },
-  "dependencies": {
+  "peerDependencies": {
     "atama": "^0.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
